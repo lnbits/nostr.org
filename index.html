@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#fff" />
     <meta
@@ -9,8 +10,18 @@
       content="default-src 'none'; manifest-src 'self'; connect-src 'self' ws: wss:; script-src 'self'; script-src-elem 'self'; script-src-attr 'none'; style-src 'self' fonts.googleapis.com; img-src 'self' https:; media-src 'self'; font-src 'self' fonts.gstatic.com; child-src 'none';"
     />
     <title>Get Nostr!</title>
-    <link rel="stylesheet" href="/styles.css" />
-    <script defer src="/main.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="main.js"></script>
+
+  <!--- open graph --->
+  <meta property="og:title" content="Come join us on Nostr, a new protocol for more than socializing " />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://nostr.org" />
+  <meta property="og:image" content="https://nostr-ings.com/assets/images/home/social-nostr.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="nostr" />
+  <!--- end open graph --->
   </head>
   <body>
     <section class="slide">
@@ -24,10 +35,9 @@
           more than socializing.</label
         >
       </div>
-      <button id="whats-nostr" class="text pos center-bottom">
-        <span>What's Nostr?</span><br />
-        <img src="images/hand-point-down.svg" class="icon" />
-      </button>
+      <a id="whats-nostr" class="text pos center-bottom" href="#info">
+        <span>what's Nostr?</span><br />
+        <img src="assets/icons/shaka-hand-point-down.svg" class="icon" /></a>
     </section>
 
     <section id="info" class="info">
@@ -48,30 +58,32 @@
       </section>
 
       <section>
-        <img src="/images/globe.svg" class="sectional-img" />
-        <h2>Interact with the world and find your niche communities</h2>
-        <p class="">
-          Each server is ran by a different person and each has its own rules.
-          You only interact with the servers you desire, or you can just fetch
-          the notes that you want specifically from any server and ignore the
-          rest.
+         <h3>Be your own content curator</h3>
+         <p class="">
+          Interact with people from across the globe and discover your niche communities. Without a forced closed-source algorithm, your home feed is based on your follows and interests.
+        </p>
+         <!--- <img src="assets/images/.png" class="sectional-img" alt="" />--->
+      </section>
+
+      <section>
+        <h3>No central server</h3>
+        <p class="">Alice can send her notes to any servers of her choice.</p>
+        <p class="">Bob can run a server and set his own rules. People can use his relay if they like his relay services, or just fetch specific notes.
         </p>
         <p>
           <a
             class="bold"
             href="https://en.wikipedia.org/wiki/Decentralization#Technological_decentralization"
-            target="_blank"
-          ></a>
+            target="_blank" alt="decentralization on wikipedia">Learn about decentralization
+          </a>
         </p>
+        <img src="assets/images/how-nostr-works/how-nostr-works-choose-your-relay-servers.png" class="sectional-img" alt="Alice sending her note through her favorite nostr app, to multiple relay servers of her choice" />
       </section>
 
       <section>
-        <img src="/images/fingerprint.svg" class="sectional-img" />
-        <h2>Signed at the core</h2>
+        <h3>Signed at the core</h3>
         <p class="">
-          Instead of using insecure passwords, all messages are signed using
-          cryptography. This way you can verify messages &amp; user authenticity
-          without relying on a centralized component.
+          Instead of using insecure passwords, all messages are signed using cryptography. You can verify messages &amp; user authenticity without relying on a centralized component. You own your nostr.
         </p>
         <p>
           <a
@@ -81,15 +93,13 @@
             >Learn about Cryptography</a
           >
         </p>
+        <img src="assets/images/how-nostr-works/how-nostr-works-sign-and-verify.png" class="sectional-img" alt="Alice using her key to sign her note" />
       </section>
 
       <section>
-        <img src="/icon/devices.svg" class="sectional-img" />
-        <h2>Diverse Software Ecosystem</h2>
+        <h2>Discover the nostrverse</h2>
         <p class="">
-          There are many different apps which change the way you engage with
-          Nostr. Pick the ones that best suit your life. There are new clients
-          being built every day!
+          Nostr is not just one app, it is a diverse software ecosystem. You can use different apps that run on the nostr protocol. Pick the ones that best suit your life. There are new clients being built every day!
         </p>
         <h3 class="">Get started with these Apps</h3>
         <ul class="logo-list">
@@ -98,51 +108,51 @@
               href="https://play.google.com/store/apps/details?id=com.vitorpamplona.amethyst"
               target="_blank"
             >
-              <img title="Amethyst" src="/icon/amethyst-logo.svg" />
+              <img title="Amethyst" alt="amethyst" src="assets/images/nostrverse/nostrverse-logos/amethyst-logo.png" />
               Amethyst
-              <img class="badge" src="/icon/android-logo.svg" />
+              <img class="badge" src="assets/icons/android.svg" />
             </a>
           </li>
           <li>
             <a href="https://astral.ninja" target="_blank">
               <img src="/icon/astral-logo.png" />
               Astral
-              <img class="badge" src="/icon/browser.svg" />
+              <img class="badge" src="assets/icons/browser.svg" />
             </a>
           </li>
           <li>
             <a href="https://damus.io" target="_blank">
-              <img src="/icon/damus-logo.svg" />
+              <img src="assets/images/nostrverse/nostrverse-logos/damus-logo.png" />
               Damus
-              <img class="badge" src="/icon/apple-logo.svg" />
+              <img class="badge" src="assets/icons/apple.svg" />
             </a>
           </li>
           <li>
             <a href="https://hamstr.to" target="_blank">
               <img src="/icon/hamstr-logo.svg" />
               Hamstr
-              <img class="badge" src="/icon/browser.svg" />
+              <img class="badge" src="assets/icons/browser.svg" />
             </a>
           </li>
           <li>
             <a href="https://iris.to" target="_blank">
               <img src="/icon/iris-logo.png" />
               Iris
-              <img class="badge" src="/icon/browser.svg" />
+              <img class="badge" src="assets/icons/browser.svg" />
             </a>
           </li>
           <li>
             <a href="https://snort.social" target="_blank">
               <img src="/icon/snort-logo.png" />
               Snort
-              <img class="badge" src="/icon/browser.svg" />
+              <img class="badge" src="assets/icons/browser.svg" />
             </a>
           </li>
           <li>
             <a href="https://yosup.app" target="_blank">
               <img src="/icon/yosup-logo.svg" />
               Yo Sup
-              <img class="badge" src="/icon/browser.svg" />
+              <img class="badge" src="assets/icons/browser.svg" />
             </a>
           </li>
         </ul>
@@ -152,7 +162,7 @@
             <a href="https://getalby.com" target="_blank">
               <img src="/icon/alby-logo.svg" />
               Alby
-              <img class="badge" src="/icon/browser.svg" />
+              <img class="badge" src="assets/icons/browser.svg" />
             </a>
           </li>
           <li>
@@ -162,7 +172,7 @@
             >
               <img src="/icon/nos2x-logo.png" />
               nos2x
-              <img class="badge" src="/images/browser.svg" />
+              <img class="badge" src="assets/icons/browser.svg" />
             </a>
           </li>
           <li>
@@ -172,7 +182,7 @@
             >
               <img src="/images/nostore-logo.png" />
               Nostore
-              <img class="badge" src="/images/apple-logo.svg" />
+              <img class="badge" src="assets/icons/apple.svg" />
             </a>
           </li>
         </ul>
@@ -242,7 +252,7 @@
     </section>
     <section class="info">
       <section>
-        <p class="font-small bold text-center">Fueled with ambition 🤙</p>
+        <p class="font-small bold text-center">Fueled with ambition and other stuff 🤙</p>
       </section>
     </section>
     <dialog id="create-keys-dialog">
