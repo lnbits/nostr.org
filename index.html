@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#fff" />
     <meta
@@ -9,30 +10,39 @@
       content="default-src 'none'; manifest-src 'self'; connect-src 'self' ws: wss:; script-src 'self'; script-src-elem 'self'; script-src-attr 'none'; style-src 'self' fonts.googleapis.com; img-src 'self' https:; media-src 'self'; font-src 'self' fonts.gstatic.com; child-src 'none';"
     />
     <title>Get Nostr!</title>
-    <link rel="stylesheet" href="/styles.css" />
-    <script defer src="/main.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="main.js"></script>
+
+  <!--- open graph --->
+  <meta property="og:title" content="Come join us on Nostr, a new protocol for more than socializing " />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://nostr.org" />
+  <meta property="og:image" content="https://nostr.org/assets/images/home/social-nostr.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="get nostr!" />
+  <!--- end open graph --->
   </head>
+  <!--- content --->
   <body>
     <section class="slide">
       <div id="intro" class="pos center">
-        <h1>
-          Come join us<br class="mobile-hide" />
-          on Nostr;
-        </h1>
-        <label class="h1-subtitle"
+        <div class="display-heading">Come join us<br class="mobile-hide" /> on Nostr;
+        </div>
+        <label class="display-heading-subtitle"
           >a new protocol for<br class="mobile-hide" />
           more than socializing.</label
         >
       </div>
-      <button id="whats-nostr" class="text pos center-bottom">
+      <a id="whats-nostr" class="text pos center-bottom" alt="what's nostr?" href="#info">
         <span>What's Nostr?</span><br />
-        <img src="images/hand-point-down.svg" class="icon" />
-      </button>
+        <img src="assets/icons/shaka-hand-point-down.svg" class="icon" />
+      </a>
     </section>
 
     <section id="info" class="info">
       <section>
-        <h2>Notes and other stuff transmitted by relays</h2>
+        <h1>Notes and other stuff transmitted by relays</h1>
         <p class="">
           Nostr is a distributed social network: users publish notes to multiple
           servers.
@@ -48,7 +58,7 @@
       </section>
 
       <section>
-        <img src="/images/globe.svg" class="sectional-img" />
+        <!---<img src="/images/globe.svg" class="sectional-img" />--->
         <h2>Interact with the world and find your niche communities</h2>
         <p class="">
           Each server is ran by a different person and each has its own rules.
@@ -66,7 +76,7 @@
       </section>
 
       <section>
-        <img src="/images/fingerprint.svg" class="sectional-img" />
+        <!---- <img src="/images/fingerprint.svg" class="sectional-img" /> --->
         <h2>Signed at the core</h2>
         <p class="">
           Instead of using insecure passwords, all messages are signed using
@@ -84,7 +94,7 @@
       </section>
 
       <section>
-        <img src="/icon/devices.svg" class="sectional-img" />
+        <!--- <img src="/icon/devices.svg" class="sectional-img" /> --->
         <h2>Diverse Software Ecosystem</h2>
         <p class="">
           There are many different apps which change the way you engage with
@@ -100,49 +110,49 @@
             >
               <img title="Amethyst" src="/icon/amethyst-logo.svg" />
               Amethyst
-              <img class="badge" src="/icon/android-logo.svg" />
+              <img class="badge" src="assets/icons/icon-android.svg" />
             </a>
           </li>
           <li>
             <a href="https://astral.ninja" target="_blank">
               <img src="/icon/astral-logo.png" />
               Astral
-              <img class="badge" src="/icon/browser.svg" />
+              <img class="badge" src="assets/icons/icon-browser.svg" />
             </a>
           </li>
           <li>
             <a href="https://damus.io" target="_blank">
               <img src="/icon/damus-logo.svg" />
               Damus
-              <img class="badge" src="/icon/apple-logo.svg" />
+              <img class="badge" src="assets/icons/icon-apple.svg" />
             </a>
           </li>
           <li>
             <a href="https://hamstr.to" target="_blank">
               <img src="/icon/hamstr-logo.svg" />
               Hamstr
-              <img class="badge" src="/icon/browser.svg" />
+              <img class="badge" src="assets/icons/icon-browser.svg" />
             </a>
           </li>
           <li>
             <a href="https://iris.to" target="_blank">
               <img src="/icon/iris-logo.png" />
               Iris
-              <img class="badge" src="/icon/browser.svg" />
+              <img class="badge" src="assets/icons/icon-browser.svg" />
             </a>
           </li>
           <li>
             <a href="https://snort.social" target="_blank">
               <img src="/icon/snort-logo.png" />
               Snort
-              <img class="badge" src="/icon/browser.svg" />
+              <img class="badge" src="assets/icons/icon-browser.svg" />
             </a>
           </li>
           <li>
             <a href="https://yosup.app" target="_blank">
               <img src="/icon/yosup-logo.svg" />
               Yo Sup
-              <img class="badge" src="/icon/browser.svg" />
+              <img class="badge" src="assets/icons/icon-browser.svg" />
             </a>
           </li>
         </ul>
@@ -152,7 +162,7 @@
             <a href="https://getalby.com" target="_blank">
               <img src="/icon/alby-logo.svg" />
               Alby
-              <img class="badge" src="/icon/browser.svg" />
+              <img class="badge" src="assets/icons/icon-extension.svg" />
             </a>
           </li>
           <li>
@@ -162,7 +172,7 @@
             >
               <img src="/icon/nos2x-logo.png" />
               nos2x
-              <img class="badge" src="/images/browser.svg" />
+              <img class="badge" src="assets/icons/icon-extension.svg" />
             </a>
           </li>
           <li>
@@ -172,18 +182,18 @@
             >
               <img src="/images/nostore-logo.png" />
               Nostore
-              <img class="badge" src="/images/apple-logo.svg" />
+              <img class="badge" src="assets/icons/icon-apple.svg" />
             </a>
           </li>
         </ul>
         <h3 class="">Command Line Tools for the Terminal</h3>
-        <ul class="app-list">
+        <ul class="logo-list">
           <li>
-            <a href="https://github.com/fiatjaf/noscl" target="_blank">noscl</a>
+            <a href="https://github.com/fiatjaf/noscl" target="_blank">noscl <br><img class="badge" src="assets/icons/icon-cli.svg" /></a>
           </li>
           <li>
             <a href="https://github.com/vishalxl/nostr_console" target="_blank"
-              >Nostr Console</a
+              >Nostr Console <br><img class="badge" src="assets/icons/icon-cli.svg" /></a
             >
           </li>
         </ul>
