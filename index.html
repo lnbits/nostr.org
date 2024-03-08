@@ -25,7 +25,8 @@
   </head>
   <!--- content --->
   <body>
-    <section class="slide">
+    <!--- section slide --->
+    <section  id="slide" class="slide">
       <div id="intro" class="pos center">
         <div class="display-heading">Come join us<br class="mobile-hide" /> on Nostr;
         </div>
@@ -39,7 +40,7 @@
         <img src="assets/icons/shaka-hand-point-down.svg" class="icon" />
       </a>
     </section>
-
+    <!--- section info --->
     <section id="info" class="info">
       <section>
         <h1>Notes and other stuff transmitted by relays</h1>
@@ -52,7 +53,7 @@
             class="bold"
             href="https://github.com/nostr-protocol/nostr"
             target="_blank"
-            >Read the Protocol</a
+            >Read the protocol</a
           >
         </p>
       </section>
@@ -90,145 +91,212 @@
             class="bold"
             href="https://en.wikipedia.org/wiki/Cryptography#Modern_cryptography_2"
             target="_blank"
-            >Learn about Cryptography</a
+            >Learn about cryptography</a
           >
         </p>
         <img src="assets/images/how-nostr-works/how-nostr-works-sign-and-verify.png" class="sectional-img" alt="Alice using her key to sign her note" />
       </section>
-
-      <section>
-        <h2>Discover the nostrverse</h2>
-        <p class="">
-          Nostr is not just one app, it is a diverse software ecosystem. You can use different apps that run on the nostr protocol. Pick the ones that best suit your life. There are new clients being built every day!
-        </p>
-        <h3 class="">Get started with these Apps</h3>
-        <ul class="logo-list">
-          <li>
-            <a
-              href=""
-              target="_blank"
-            >
-              <img title="" src="assets/images/nostrverse/nostrverse-logos/placeholder.png" />
-              Placeholder
-              <img class="badge" src="assets/icons/icon-android.svg" />
-            </a>
-          </li>
-          <li>
-            <a
-              href=""
-              target="_blank"
-            >
-              <img title="" src="assets/images/nostrverse/nostrverse-logos/placeholder.png" />
-              Placeholder
-              <img class="badge" src="assets/icons/icon-browser.svg" />
-            </a>
-          </li>
-          <li>
-            <a
-              href=""
-              target="_blank"
-            >
-              <img title="" src="assets/images/nostrverse/nostrverse-logos/placeholder.png" />
-              Placeholder
-              <img class="badge" src="assets/icons/icon-apple.svg" />
-            </a>
-          </li>
-          <li>
-            <a
-              href=""
-              target="_blank"
-            >
-              <img title="" src="assets/images/nostrverse/nostrverse-logos/placeholder.png" />
-              Placeholder
-              <img class="badge" src="assets/icons/icon-browser.svg" />
-            </a>
-          </li>
-          <li>
-            <a
-              href=""
-              target="_blank"
-            >
-              <img title="" src="assets/images/nostrverse/nostrverse-logos/placeholder.png" />
-              Placeholder
-              <img class="badge" src="assets/icons/icon-browser.svg" />
-            </a>
-          </li>
-          <li>
-            <a
-              href=""
-              target="_blank"
-            >
-              <img title="" src="assets/images/nostrverse/nostrverse-logos/placeholder.png" />
-              Placeholder
-              <img class="badge" src="assets/icons/icon-browser.svg" />
-            </a>
-          </li>
-          <li>
-            <a
-              href=""
-              target="_blank"
-            >
-              <img title="" src="assets/images/nostrverse/nostrverse-logos/placeholder.png" />
-              Placeholder
-              <img class="badge" src="assets/icons/icon-browser.svg" />
-            </a>
-          </li>
-        </ul>
-        <h3 class="">Extensions to use with Web Apps</h3>
-        <ul class="logo-list">
-          <li>
-            <a href="https://getalby.com" target="_blank">
-              <img src="/icon/alby-logo.svg" />
-              Alby
-              <img class="badge" src="assets/icons/icon-extension.svg" />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://chrome.google.com/webstore/detail/nos2x/kpgefcfmnafjgpblomihpgmejjdanjjp"
-              target="_blank"
-            >
-              <img src="/icon/nos2x-logo.png" />
-              nos2x
-              <img class="badge" src="assets/icons/icon-extension.svg" />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://testflight.apple.com/join/ouPWAQAV"
-              target="_blank"
-            >
-              <img src="/images/nostore-logo.png" />
-              Nostore
-              <img class="badge" src="assets/icons/icon-apple.svg" />
-            </a>
-          </li>
-        </ul>
-        <h3 class="">Command Line Tools for the Terminal</h3>
-        <ul class="logo-list">
-          <li>
-                        <a
-              href=""
-              target="_blank"
-            >
-              <img title="" src="assets/images/nostrverse/nostrverse-logos/placeholder.png" />
-              Placeholder <br><img class="badge" src="assets/icons/icon-cli.svg" /></a>
-          </li>
-          <li>
-                        <a
-              href=""
-              target="_blank"
-            >
-              <img title="" src="assets/images/nostrverse/nostrverse-logos/placeholder.png" />
-              Placeholder <br><img class="badge" src="assets/icons/icon-cli.svg" /></a
-            >
-          </li>
-        </ul>
-      </section>
     </section>
+
+      <section id="nostrverse" class="nostrverse">
+        <section class="info">
+          <h2>Discover the nostrverse</h2>
+          <p class="">
+          Nostr is not just one app, it is a diverse software ecosystem. More people are helping build nostr clients every day!
+          </p>
+          <p class="">You can use different client apps that run on the nostr protocol. Pick the ones that best suit your life. 
+          </p>
+          <h3 class="heading-alien">Get the Nostr!</h3>
+          <h4 class="">Apps to get you started</h4>
+          <!--- for android --->
+          <h4 class=""><img class="badge" src="assets/icons/icon-android.svg" /> Android</h4>
+          <ul class="logo-list">
+          <!--- amethyst --->
+            <li>
+              <a
+              href="https://play.google.com/store/apps/details?id=com.vitorpamplona.amethyst"
+              target="_blank" alt="amethyst download link for Google Play store">
+              <img src="assets/images/nostrverse/nostrverse-logos/amethyst-logo.png" title="amethyst logo" alt="amethyst logo" /> Amethyst
+              </a>
+              <a href="https://github.com/vitorpamplona/amethyst" title="Amethyst on github">
+              <img class="badge" src="assets/icons/icon-github.svg" /></a>
+            </li>
+          <!--- primal --->
+            <li>
+              <a
+              href="https://primal.net/downloads" alt="primal website"
+              target="_blank">
+                <img src="assets/images/nostrverse/nostrverse-logos/primal-logo.png" title="primal logo" alt="primal logo"  />
+                Primal
+              </a>
+              <a href="https://github.com/PrimalHQ" title="primal on github">
+                <img class="badge" src="assets/icons/icon-github.svg" /></a>
+            </li>
+          </ul>
+          <!--- for iOS --->
+          <h4 class=""><img class="badge" src="assets/icons/icon-apple.svg" /> iOS</h4>
+          <ul class="logo-list">
+            <!--- damus --->
+            <li>
+              <a
+              href="https://damus.io/" alt="damus website"
+              target="_blank">
+                <img src="assets/images/nostrverse/nostrverse-logos/damus-logo.png" title="damus logo" alt="damus logo"  />
+              Damus
+              </a>
+              <a href="https://github.com/damus-io/damus" title="Damus on github">
+                <img class="badge" src="assets/icons/icon-github.svg" /></a>
+            </li>
+            <!--- nos --->
+            <li>
+              <a
+              href="https://www.nos.social/" alt="nos website"
+              target="_blank">
+                <img src="assets/images/nostrverse/nostrverse-logos/nos-logo.png" title="nos logo" alt="nos logo"  />
+              Nos
+              </a>
+              <a href="https://github.com/planetary-social/nos" title="Nos by Planetary on github">
+              <img class="badge" src="assets/icons/icon-github.svg" /></a>
+            </li>
+            <!--- primal --->
+            <li>
+              <a
+              href="https://primal.net/downloads" alt="primal website"
+              target="_blank">
+              <img src="assets/images/nostrverse/nostrverse-logos/primal-logo.png" title="primal logo" alt="primal logo"  />
+              Primal
+              </a>
+              <a href="https://github.com/PrimalHQ" title="primal on github">
+                <img class="badge" src="assets/icons/icon-github.svg" />
+              </a>
+            </li>
+          </ul>
+          <!--- for Web Apps --->
+          <h4 class=""><img class="badge" src="assets/icons/icon-browser.svg" /> Web apps</h4>
+          <p class="">To login & post on web apps, please use a <a href="#extensions" alt="nostr signing extensions">signing extension</a></p>
+          <ul class="logo-list">
+          <!--- coracle --->
+          <li>
+            <a
+              href="https://app.coracle.social/" alt="coracle website"
+              target="_blank">
+              <img src="assets/images/nostrverse/nostrverse-logos/coracle-logo.png" title="coracle logo" alt="coracle logo"  />
+              Coracle
+            </a>
+            <a href="https://github.com/coracle-social/coracle" title="Coracle on github">
+              <img class="badge" src="assets/icons/icon-github.svg" /></a>
+            </li>
+            <!--- iris --->
+            <li>
+              <a
+              href="https://iris.to/" alt="iris website"
+              target="_blank">
+                <img src="assets/images/nostrverse/nostrverse-logos/iris-logo.png" title="iris logo" alt="iris logo"  />
+              Iris
+              </a>
+              <a href="https://github.com/irislib/iris-messenger" title="iris on github">
+                <img class="badge" src="assets/icons/icon-github.svg" /></a>
+            </li>
+            <!--- primal --->
+            <li>
+              <a
+              href="https://primal.net/home" alt="primal website"
+              target="_blank">
+                <img src="assets/images/nostrverse/nostrverse-logos/primal-logo.png" title="primal logo" alt="primal logo"  />
+              Primal
+              </a>
+              <a href="https://github.com/PrimalHQ" title="primal on github">
+                <img class="badge" src="assets/icons/icon-github.svg" /></a>
+            </li>
+            <!--- snort --->
+            <li>
+              <a
+              href="https://snort.social/" alt="snort website"
+              target="_blank">
+                <img src="assets/images/nostrverse/nostrverse-logos/snort-logo.png" title="snort logo" alt="snort logo"  />
+              Snort
+              </a>
+              <a href="https://github.com/v0l/snort" title="snort on github">
+                <img class="badge" src="assets/icons/icon-github.svg" /></a>
+            </li>
+          </ul>
+          <!-- signing extensions --->
+          <h4 id="extensions" class=""><img class="badge" src="assets/icons/icon-extension.svg" /> Signing extensions</h4>
+          <p class="">Keep your keys more secure</p>
+          <ul class="logo-list">
+            <!--- alby --->
+            <li>
+              <a href="https://getalby.com" target="_blank">
+                <img src="assets/images/nostrverse/nostrverse-logos/alby-logo.png" />
+                Alby
+              </a>
+              <a href="https://github.com/getAlby/lightning-browser-extension" title="alby on github">
+                <img class="badge" src="assets/icons/icon-github.svg" />
+              </a>
+            </li>
+            <!--- nos2x --->
+            <li>
+              <a
+                href="https://chrome.google.com/webstore/detail/nos2x/kpgefcfmnafjgpblomihpgmejjdanjjp" target="_blank">
+                <img src="assets/images/nostrverse/nostrverse-logos/nos2x-logo.png" />
+                nos2x
+              </a>
+              <a href="https://github.com/fiatjaf/nos2x" title="nos2x on github">
+                <img class="badge" src="assets/icons/icon-github.svg" />
+              </a>
+            </li>
+            <!--- nostore --->
+            <li>
+              <a
+                href="https://testflight.apple.com/join/ouPWAQAV" target="_blank">
+                <img src="assets/images/nostrverse/nostrverse-logos/nostore-logo.png" />
+                Nostore
+              </a>
+              <a href="https://github.com/ursuscamp/nostore" title="nostore on github">
+                <img class="badge" src="assets/icons/icon-github.svg" />
+              </a>
+            </li>
+            <!--- nsecbunker --->
+            <li>
+              <a
+                href="https://nsecbunker.com/" target="_blank">
+                <img src="assets/images/nostrverse/nostrverse-logos/nsecbunker-logo.png" />
+                nsecBunker
+              </a>
+              <a href="https://github.com/kind-0/nsecbunkerd" title="nostore on github">
+                <img class="badge" src="assets/icons/icon-github.svg" />
+              </a>
+            </li>
+          </ul>
+          <!--- command line tools --->
+          <h4 class=""><img class="badge" src="assets/icons/icon-cli.svg" /> Desktop & command line tools for the terminal</h4>
+          <ul class="logo-list">
+            <!--- algia --->
+            <li>
+                <a 
+                  href="https://github.com/mattn/algia" target="_blank">
+                  Algia <br><img class="badge" src="assets/icons/icon-github.svg" /></a>
+            </li>
+            <!--- gossip --->
+            <li>
+              <a
+                href="https://github.com/mikedilger/gossip" target="_blank">
+                Gossip <br><img class="badge" src="assets/icons/icon-github.svg" />
+              </a>
+            </li>
+            <!--- nak --->
+            <li>
+              <a
+                href="https://github.com/fiatjaf/nak" target="_blank">
+                Nak <br><img class="badge" src="assets/icons/icon-github.svg" />
+              </a>
+            </li>
+          </ul>
+        </section>
+      </section>
     <section id="faqs" class="info">
       <section>
-        <h2>FAQs</h2>
+        <h2>#asknostr</h2>
         <p class="question" id="ostrich">
           <a href="#ostrich"> What's with the Ostrich? </a>
         </p>

@@ -10,13 +10,17 @@
    --nostrich-purple-visited: #4E4CAB;
    --shaka-yellow: #FFEE00;
    --shaka-glow: #E1DB85;
+   --cyberspace-blue: #06004D;
+   --cyberspace-blue-dark: #06013F;
+   --anchor-text: #A6AAFF;
+   --anchor-text-hover: #ABFFFC;
    --background: #06004D;
    --heading:#7371FF;
    --heading-shadow: #000000;
+   --question: #A6AAFF;
    --text: #7371FF;
    --text-shadow: #000000;
-   --anchor-text: #A6AAFF;
-   --anchor-text-hover: #ABFFFC;
+
          }
 /* body */
 
@@ -116,6 +120,11 @@ h4
   color: var(--heading);
 }
 
+.heading-alien {
+  color:  var(--alien-green);
+  padding-top:  25px;
+}
+
 p {
   color: var(--text);
 }
@@ -136,17 +145,21 @@ p {
 }
 
 h1 {
-  font-size: 36px;
+  font-size: 44px;
 }
 h2 {
+  font-size: 36px;
+  text-transform: none;
+}
+h3
+ {
   font-size: 28px;
   text-transform: none;
 }
-h3,
-h4
- {
-  font-size: 20px;
-  text-transform: none;
+
+h4 {
+  font-size:  20px;
+  text-transform:  none;
 }
 p {
   font-size: 20px;
@@ -205,6 +218,8 @@ a.bold:hover {
   width: 500px;
 }
 
+/* sections */
+
 .info {
   max-width: 700px;
   padding: 20px;
@@ -220,6 +235,19 @@ a.bold:hover {
   width: 100%;
   max-width: 700px;
 }
+
+/* section nostrverse */
+
+.nostrverse {
+  background: rgb(49,0,133);
+  background: linear-gradient(30deg, rgba(49,0,133,1) 0%, rgba(5,0,70,1) 30%, rgba(6,0,77,1) 55%, rgba(49,0,133,1) 85%);
+  position: relative;
+  width: 100vw;
+  height: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+} 
 
 .logo-list {
   list-style: none;
@@ -256,12 +284,17 @@ a.bold:hover {
 .font-small {
   font-size: 14px;
 }
+
+/* section asknostr */
+
 .question {
   font-weight: bold;
 }
 .question a {
+  color:  var(--question);
   text-decoration: none;
 }
+
 
 @media (max-width: 600px) {
   #intro {
