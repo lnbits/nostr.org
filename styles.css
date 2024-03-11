@@ -19,14 +19,13 @@
    --heading-shadow: #000000;
    --question: #A6AAFF;
    --text: #7371FF;
-   --text-shadow: #000000;
 
          }
 /* body */
 
 *:focus-visible {
   /* Technically this is bad and something else should be done to indicate
-   * that something is in focus.
+   * that something is in focus. https://codepen.io/shshaw/pen/jOMdaL
    */
   outline: none;
 }
@@ -36,6 +35,7 @@ body {
   color: #6200FF;
   font-family: 'Noto Sans', sans-serif;
   padding: 0;
+  overflow-x: hidden;
   margin: 0;
 }
 
@@ -74,7 +74,6 @@ a.text {
   text-decoration: none;
 }
 a.text:hover {
-  color: var(--alien-green);
   font-size: 25px;
   padding: 20px;
 }
@@ -102,22 +101,22 @@ h4
 
 .display-heading {
   color: var(--alien-green);
-  text-shadow: 2px 2px 4px #000000;
 }
 
 .display-heading-subtitle {
   color: var(--nostrich-purple);
-  text-shadow: 2px 2px 4px var(--heading-shadow);
 }
 
 h1 {
-  color: var(--anchor-text);
+  /* color: var(--anchor-text);*/ 
+  color: white;
 }
 h2,
 h3,
 h4
  {
-  color: var(--heading);
+   /* color: var(--heading);*/ 
+   color: white;
 }
 
 .heading-alien {
@@ -190,21 +189,58 @@ a.bold:hover {
 .flex {
   display: flex !important;
 }
+.glowalien {
+  width:40%;
+  margin: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-animation-name: wiggle;
+  -ms-animation-name: wiggle;
+  -ms-animation-duration: 1000ms;
+  -webkit-animation-duration: 1000ms;
+  -webkit-animation-iteration-count: 1;
+  -ms-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -ms-animation-timing-function: ease-in-out;
+}
+
+@-webkit-keyframes wiggle {
+  0% {-webkit-transform: rotate(2deg);}
+  25% {-webkit-transform: rotate(-2deg);}
+  50% {-webkit-transform: rotate(2deg);}
+  75% {-webkit-transform: rotate(-2deg);}
+  100% {-webkit-transform: rotate(0deg);}
+}
+
+@-ms-keyframes wiggle {
+  0% {-ms-transform: rotate(0.5deg);}
+  25% {-ms-transform: rotate(-0.5deg);}
+  50% {-ms-transform: rotate(0.5deg);}
+  75% {-ms-transform: rotate(-2deg);}
+  100% {-ms-transform: rotate(0deg);}
+}
+
+@keyframes wiggle {
+  0% {transform: rotate(2deg);}
+  25% {transform: rotate(-2deg);}
+  50% {transform: rotate(2deg);}
+  75% {transform: rotate(-2deg);}
+  100% {transform: rotate(0deg);}
+}
 
 .slide {
-  background-image: url("assets/images/home/join-nostr.png");
+  background: radial-gradient(89.59% 89.59% at 50.00% 0.00%, rgba(49,0,133,1) 0%, rgba(5,0,70,1) 47.40%, rgba(5,0,70,1) 100%), #0D1017;
+ 
   position: relative;
   width: 100vw;
   height: 100vh;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 .pos {
   position: absolute;
 }
 .pos.center {
-  top: 67%;
+  top: 45%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
 }
@@ -302,15 +338,77 @@ a.bold:hover {
   }
 
   .pos.center {
-  top: 60%;
+  top: 45%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
 }
-
-  .mobile-hide {
+.mobile-hide {
     display: none !important;
   }
   .logo-list {
     text-align: center;
   }
+}
+.spin-tweak {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.svg-neon {
+  width: 60px !important;
+  filter: invert(16%) sepia(67%) saturate(5718%) hue-rotate(283deg) brightness(94%) contrast(123%);
+}
+.video {
+  width: 100%;
+  height: 400px;
+  margin: auto;
+  display: block;
+  border: none;
+}
+.video-popup {
+  display: none;
+  width: 100%;
+  height: 100vh;
+  margin: auto;
+  position: fixed;
+  top: 0;
+  boxshadow: 10px 10px 10px 10px black;
+}
+.popup-bg {
+  background: rgba(0,0,0,0.8);
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+}
+.popup-content {
+  background: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: auto;
+}
+.popup-title {
+  padding: 30px;
+  margin: 0 auto;
+  color: red;
+  text-transform: uppercase;
+}
+.popup-btn {
+  cursor: pointer;
+}
+.notes { 
+  top: 50%;
+  position: absolute; 
+  left: -100px; 
+  width: 50%;
+}
+.otherNotes { 
+  top: 50%;
+  position: absolute; 
+  right: -100px; 
+  width: 50%;
 }

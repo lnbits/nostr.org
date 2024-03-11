@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#fff" />
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'none'; manifest-src 'self'; connect-src 'self' ws: wss:; script-src 'self'; script-src-elem 'self'; script-src-attr 'none'; style-src 'self' fonts.googleapis.com; img-src 'self' https:; media-src 'self'; font-src 'self' fonts.gstatic.com; child-src 'none';"
-    />
+
     <title>Get Nostr!</title>
+    <link rel="stylesheet/less" type="text/css" href="styles.less" />
     <link rel="stylesheet" href="styles.css" />
-    <script defer src="main.js"></script>
+    <script src="jquery.js"></script>
+    <script src="main.js"></script>
+    
+
 
   <!--- open graph --->
   <meta property="og:title" content="Come join us on Nostr, a new protocol for more than socializing " />
@@ -25,19 +26,32 @@
   </head>
   <!--- content --->
   <body>
+    
+    <div class="video-popup">
+      <div class="popup-bg"></div>
+        <div class="popup-content">
+  <!--         <p class="popup-title">Youtube</p> -->
+          <iframe src="https://youtube.com/embed/5W-jtbbh3eA?autoplay=0" class="video"></iframe>
+        </div>
+    </div>
     <!--- section slide --->
     <section  id="slide" class="slide">
+
+      <img src="assets/images/notes.svg" class="svg-neon spin-tweak notes" />
+      <img src="assets/images/notes.svg" class="svg-neon spin-tweak otherNotes"/>
       <div id="intro" class="pos center">
-        <div class="display-heading">Come join us<br class="mobile-hide" /> on Nostr;
+        <img src="./assets/images/glowalien.png" class="glowalien" alt="glowalien" />
+        <div class="display-heading">Come join us<br class="mobile-hide" /> on Nostr:
         </div>
         <label class="display-heading-subtitle"
           >a new protocol for<br class="mobile-hide" />
-          more than socializing.</label
+          socializing (and more)</label
         >
       </div>
+
       <a id="whats-nostr" class="text pos center-bottom" alt="what's nostr?" href="#info">
-        <span>What's Nostr?</span><br />
-        <img src="assets/icons/shaka-hand-point-down.svg" class="icon" />
+        <span>What is Nostr?</span><br />
+        <img src="assets/images/pan_tool_alt.svg" class="svg-neon spin-tweak" />
       </a>
     </section>
     <!--- section info --->
@@ -45,8 +59,7 @@
       <section>
         <h1>Notes and other stuff transmitted by relays</h1>
         <p class="">
-          Nostr is a distributed social network: users publish notes to multiple
-          servers.
+          Nostr flips the current internet paradigm of "dumb client/smart server" to "smart client/dumb server", by using relays and public-key crytography. Nostr empowers users to control their own data.
         </p>
         <p>
           <a
@@ -54,8 +67,13 @@
             href="https://github.com/nostr-protocol/nostr"
             target="_blank"
             >Read the protocol</a
+          ><br/>
+          <a
+            class="popup-btn bold"
+            >Watch the video</a
           >
         </p>
+
       </section>
 
       <section>
@@ -297,25 +315,14 @@
     <section id="faqs" class="info">
       <section>
         <h2>#asknostr</h2>
+        <p class="question" id="devloping">
+          <a href="#ostrich"> Can anyone develop on Nostr? </a>
+        </p>
+        <p class="answer">YES! Nostr's super-power is its permissionless development enviroment. As an interopable and modular protocol, Nostr is a dream to develop for.</p>
         <p class="question" id="ostrich">
           <a href="#ostrich"> What's with the Ostrich? </a>
         </p>
         <p class="answer">The Ostrich is the beloved mascot of Nostr users.</p>
-        <p class="question" id="dm-security">
-          <a href="#dm-security"> Why are DM's not considered secure? </a>
-        </p>
-        <p class="answer">
-          DM's on Nostr using the
-          <a
-            href="https://github.com/nostr-protocol/nips/blob/master/04.md"
-            target="_blank"
-            >NIP-04</a
-          >
-          are encrypted, but only it's contents. This means that people can
-          discover which DM's are being sent to who. This is different from
-          secure chat applications like signal where all communications are
-          encrypted.
-        </p>
         <p class="question" id="what-are-nips">
           <a href="#what-are-nips"> What are NIPs? </a>
         </p>
