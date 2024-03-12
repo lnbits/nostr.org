@@ -190,7 +190,7 @@ a.bold:hover {
   display: flex !important;
 }
 .glowalien {
-  width:40%;
+  width:50%;
   margin: auto;
   display: block;
   margin-left: auto;
@@ -357,9 +357,15 @@ a.bold:hover {
   transform: rotate(180deg);
 }
 .svg-neon {
-  width: 60px !important;
+  margin-top:  5px;
+  width: 50px !important;
   filter: invert(16%) sepia(67%) saturate(5718%) hue-rotate(283deg) brightness(94%) contrast(123%);
 }
+
+.svg-neon:hover, .svg-neon:active {
+  filter: brightness(0) saturate(100%) invert(77%) sepia(98%) saturate(881%) hue-rotate(148deg) brightness(106%) contrast(96%);
+}
+
 .video {
   width: 100%;
   height: 400px;
