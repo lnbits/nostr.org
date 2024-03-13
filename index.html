@@ -2,215 +2,327 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#fff" />
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'none'; manifest-src 'self'; connect-src 'self' ws: wss:; script-src 'self'; script-src-elem 'self'; script-src-attr 'none'; style-src 'self' fonts.googleapis.com; img-src 'self' https:; media-src 'self'; font-src 'self' fonts.gstatic.com; child-src 'none';"
-    />
+
     <title>Get Nostr!</title>
-    <link rel="stylesheet" href="/styles.css" />
-    <script defer src="/main.js"></script>
+    <link rel="stylesheet/less" type="text/css" href="styles.less" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="jquery.js"></script>
+    <script src="main.js"></script>
+    
+
+
+  <!--- open graph --->
+  <meta property="og:title" content="Come join us on Nostr, a new protocol for more than socializing " />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://nostr.org" />
+  <meta property="og:image" content="https://nostr.org/assets/images/home/social-nostr.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="get nostr!" />
+  <!--- end open graph --->
   </head>
+  <!--- content --->
   <body>
-    <section class="slide">
+    
+    <div class="video-popup">
+      <div class="popup-bg"></div>
+        <div class="popup-content">
+  <!--         <p class="popup-title">Youtube</p> -->
+          <iframe src="https://youtube.com/embed/5W-jtbbh3eA?autoplay=0" class="video"></iframe>
+        </div>
+    </div>
+    <!--- section slide --->
+    <section  id="slide" class="slide">
+
+      <img src="assets/images/notes.svg" class="svg-neon spin-tweak notes" />
+      <img src="assets/images/notes.svg" class="svg-neon spin-tweak otherNotes"/>
       <div id="intro" class="pos center">
-        <h1>
-          Come join us<br class="mobile-hide" />
-          on Nostr;
-        </h1>
-        <label class="h1-subtitle"
+        <div id="header-img"></div>
+        <div class="display-heading">Come join us<br class="mobile-hide" /> on Nostr:
+        </div>
+        <label class="display-heading-subtitle"
           >a new protocol for<br class="mobile-hide" />
-          more than socializing.</label
+          socializing (and more)</label
         >
       </div>
-      <button id="whats-nostr" class="text pos center-bottom">
-        <span>What's Nostr?</span><br />
-        <img src="images/hand-point-down.svg" class="icon" />
-      </button>
-    </section>
 
+      <a id="whats-nostr" class="text pos center-bottom" alt="what's nostr?" href="#info">
+        <span>What is Nostr?</span><br />
+        <img src="assets/images/pan_tool_alt.svg" class="svg-neon spin-tweak" />
+      </a>
+    </section>
+    <!--- section info --->
     <section id="info" class="info">
       <section>
-        <h2>Notes and other stuff transmitted by relays</h2>
+        <h1>Notes and other stuff transmitted by relays</h1>
         <p class="">
-          Nostr is a distributed social network: users publish notes to multiple
-          servers.
+          Nostr flips the current internet paradigm of "dumb client/smart server" to "smart client/dumb server", by using relays and public-key crytography. Nostr empowers users to control their own data.
         </p>
         <p>
           <a
             class="bold"
             href="https://github.com/nostr-protocol/nostr"
             target="_blank"
-            >Read the Protocol</a
+            >Read the protocol</a
+          ><br/>
+          <a
+            class="popup-btn bold"
+            >Watch the video</a
           >
         </p>
+
       </section>
 
       <section>
-        <img src="/images/globe.svg" class="sectional-img" />
-        <h2>Interact with the world and find your niche communities</h2>
-        <p class="">
-          Each server is ran by a different person and each has its own rules.
-          You only interact with the servers you desire, or you can just fetch
-          the notes that you want specifically from any server and ignore the
-          rest.
+         <h3>Be your own content curator</h3>
+         <p class="">
+          Interact with people from across the globe and discover your niche communities. Without a forced closed-source algorithm, your home feed is based on your follows and interests.
+        </p>
+         <!--- <img src="assets/images/.png" class="sectional-img" alt="" />--->
+      </section>
+
+      <section>
+        <h3>No central server</h3>
+        <p class="">Alice can send her notes to any servers of her choice.</p>
+        <p class="">Bob can run a server and set his own rules. People can use his relay if they like his relay services, or just fetch specific notes.
         </p>
         <p>
           <a
             class="bold"
             href="https://en.wikipedia.org/wiki/Decentralization#Technological_decentralization"
-            target="_blank"
-          ></a>
+            target="_blank" alt="decentralization on wikipedia">Learn about decentralization
+          </a>
         </p>
+        <img src="assets/images/how-nostr-works/how-nostr-works-choose-your-relay-servers.png" class="sectional-img" alt="Alice sending her note through her favorite nostr app, to multiple relay servers of her choice" />
       </section>
 
       <section>
-        <img src="/images/fingerprint.svg" class="sectional-img" />
-        <h2>Signed at the core</h2>
+        <h3>Signed at the core</h3>
         <p class="">
-          Instead of using insecure passwords, all messages are signed using
-          cryptography. This way you can verify messages &amp; user authenticity
-          without relying on a centralized component.
+          Instead of using insecure passwords, all messages are signed using cryptography. You can verify messages &amp; user authenticity without relying on a centralized component. You own your nostr.
         </p>
         <p>
           <a
             class="bold"
             href="https://en.wikipedia.org/wiki/Cryptography#Modern_cryptography_2"
             target="_blank"
-            >Learn about Cryptography</a
+            >Learn about cryptography</a
           >
         </p>
-      </section>
-
-      <section>
-        <img src="/icon/devices.svg" class="sectional-img" />
-        <h2>Diverse Software Ecosystem</h2>
-        <p class="">
-          There are many different apps which change the way you engage with
-          Nostr. Pick the ones that best suit your life. There are new clients
-          being built every day!
-        </p>
-        <h3 class="">Get started with these Apps</h3>
-        <ul class="logo-list">
-          <li>
-            <a
-              href="https://play.google.com/store/apps/details?id=com.vitorpamplona.amethyst"
-              target="_blank"
-            >
-              <img title="Amethyst" src="/icon/amethyst-logo.svg" />
-              Amethyst
-              <img class="badge" src="/icon/android-logo.svg" />
-            </a>
-          </li>
-          <li>
-            <a href="https://astral.ninja" target="_blank">
-              <img src="/icon/astral-logo.png" />
-              Astral
-              <img class="badge" src="/icon/browser.svg" />
-            </a>
-          </li>
-          <li>
-            <a href="https://damus.io" target="_blank">
-              <img src="/icon/damus-logo.svg" />
-              Damus
-              <img class="badge" src="/icon/apple-logo.svg" />
-            </a>
-          </li>
-          <li>
-            <a href="https://hamstr.to" target="_blank">
-              <img src="/icon/hamstr-logo.svg" />
-              Hamstr
-              <img class="badge" src="/icon/browser.svg" />
-            </a>
-          </li>
-          <li>
-            <a href="https://iris.to" target="_blank">
-              <img src="/icon/iris-logo.png" />
-              Iris
-              <img class="badge" src="/icon/browser.svg" />
-            </a>
-          </li>
-          <li>
-            <a href="https://snort.social" target="_blank">
-              <img src="/icon/snort-logo.png" />
-              Snort
-              <img class="badge" src="/icon/browser.svg" />
-            </a>
-          </li>
-          <li>
-            <a href="https://yosup.app" target="_blank">
-              <img src="/icon/yosup-logo.svg" />
-              Yo Sup
-              <img class="badge" src="/icon/browser.svg" />
-            </a>
-          </li>
-        </ul>
-        <h3 class="">Extensions to use with Web Apps</h3>
-        <ul class="logo-list">
-          <li>
-            <a href="https://getalby.com" target="_blank">
-              <img src="/icon/alby-logo.svg" />
-              Alby
-              <img class="badge" src="/icon/browser.svg" />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://chrome.google.com/webstore/detail/nos2x/kpgefcfmnafjgpblomihpgmejjdanjjp"
-              target="_blank"
-            >
-              <img src="/icon/nos2x-logo.png" />
-              nos2x
-              <img class="badge" src="/images/browser.svg" />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://testflight.apple.com/join/ouPWAQAV"
-              target="_blank"
-            >
-              <img src="/images/nostore-logo.png" />
-              Nostore
-              <img class="badge" src="/images/apple-logo.svg" />
-            </a>
-          </li>
-        </ul>
-        <h3 class="">Command Line Tools for the Terminal</h3>
-        <ul class="app-list">
-          <li>
-            <a href="https://github.com/fiatjaf/noscl" target="_blank">noscl</a>
-          </li>
-          <li>
-            <a href="https://github.com/vishalxl/nostr_console" target="_blank"
-              >Nostr Console</a
-            >
-          </li>
-        </ul>
+        <img src="assets/images/how-nostr-works/how-nostr-works-sign-and-verify.png" class="sectional-img" alt="Alice using her key to sign her note" />
       </section>
     </section>
+
+      <section id="nostrverse" class="nostrverse">
+        <section class="info">
+          <h2>Discover the nostrverse</h2>
+          <p class="">
+          Nostr is not just one app, it is a diverse software ecosystem. More people are helping build nostr clients every day!
+          </p>
+          <p class="">You can use different client apps that run on the nostr protocol. Pick the ones that best suit your life. 
+          </p>
+          <h3 class="heading-alien">Get the Nostr!</h3>
+          <h4 class="">Apps to get you started</h4>
+          <!--- for android --->
+          <h4 class=""><img class="badge" src="assets/icons/icon-android.svg" /> Android</h4>
+          <ul class="logo-list">
+          <!--- amethyst --->
+            <li>
+              <a
+              href="https://play.google.com/store/apps/details?id=com.vitorpamplona.amethyst"
+              target="_blank" alt="amethyst download link for Google Play store">
+              <img src="assets/images/nostrverse/nostrverse-logos/amethyst-logo.png" title="amethyst logo" alt="amethyst logo" /> Amethyst
+              </a>
+              <a href="https://github.com/vitorpamplona/amethyst" title="Amethyst on github">
+              <img class="badge" src="assets/icons/icon-github.svg" /></a>
+            </li>
+          <!--- primal --->
+            <li>
+              <a
+              href="https://primal.net/downloads" alt="primal website"
+              target="_blank">
+                <img src="assets/images/nostrverse/nostrverse-logos/primal-logo.png" title="primal logo" alt="primal logo"  />
+                Primal
+              </a>
+              <a href="https://github.com/PrimalHQ" title="primal on github">
+                <img class="badge" src="assets/icons/icon-github.svg" /></a>
+            </li>
+          </ul>
+          <!--- for iOS --->
+          <h4 class=""><img class="badge" src="assets/icons/icon-apple.svg" /> iOS</h4>
+          <ul class="logo-list">
+            <!--- damus --->
+            <li>
+              <a
+              href="https://damus.io/" alt="damus website"
+              target="_blank">
+                <img src="assets/images/nostrverse/nostrverse-logos/damus-logo.png" title="damus logo" alt="damus logo"  />
+              Damus
+              </a>
+              <a href="https://github.com/damus-io/damus" title="Damus on github">
+                <img class="badge" src="assets/icons/icon-github.svg" /></a>
+            </li>
+            <!--- nos --->
+            <li>
+              <a
+              href="https://www.nos.social/" alt="nos website"
+              target="_blank">
+                <img src="assets/images/nostrverse/nostrverse-logos/nos-logo.png" title="nos logo" alt="nos logo"  />
+              Nos
+              </a>
+              <a href="https://github.com/planetary-social/nos" title="Nos by Planetary on github">
+              <img class="badge" src="assets/icons/icon-github.svg" /></a>
+            </li>
+            <!--- primal --->
+            <li>
+              <a
+              href="https://primal.net/downloads" alt="primal website"
+              target="_blank">
+              <img src="assets/images/nostrverse/nostrverse-logos/primal-logo.png" title="primal logo" alt="primal logo"  />
+              Primal
+              </a>
+              <a href="https://github.com/PrimalHQ" title="primal on github">
+                <img class="badge" src="assets/icons/icon-github.svg" />
+              </a>
+            </li>
+          </ul>
+          <!--- for Web Apps --->
+          <h4 class=""><img class="badge" src="assets/icons/icon-browser.svg" /> Web apps</h4>
+          <p class="">To login & post on web apps, please use a <a href="#extensions" alt="nostr signing extensions">signing extension</a></p>
+          <ul class="logo-list">
+          <!--- coracle --->
+          <li>
+            <a
+              href="https://app.coracle.social/" alt="coracle website"
+              target="_blank">
+              <img src="assets/images/nostrverse/nostrverse-logos/coracle-logo.png" title="coracle logo" alt="coracle logo"  />
+              Coracle
+            </a>
+            <a href="https://github.com/coracle-social/coracle" title="Coracle on github">
+              <img class="badge" src="assets/icons/icon-github.svg" /></a>
+            </li>
+            <!--- iris --->
+            <li>
+              <a
+              href="https://iris.to/" alt="iris website"
+              target="_blank">
+                <img src="assets/images/nostrverse/nostrverse-logos/iris-logo.png" title="iris logo" alt="iris logo"  />
+              Iris
+              </a>
+              <a href="https://github.com/irislib/iris-messenger" title="iris on github">
+                <img class="badge" src="assets/icons/icon-github.svg" /></a>
+            </li>
+            <!--- primal --->
+            <li>
+              <a
+              href="https://primal.net/home" alt="primal website"
+              target="_blank">
+                <img src="assets/images/nostrverse/nostrverse-logos/primal-logo.png" title="primal logo" alt="primal logo"  />
+              Primal
+              </a>
+              <a href="https://github.com/PrimalHQ" title="primal on github">
+                <img class="badge" src="assets/icons/icon-github.svg" /></a>
+            </li>
+            <!--- snort --->
+            <li>
+              <a
+              href="https://snort.social/" alt="snort website"
+              target="_blank">
+                <img src="assets/images/nostrverse/nostrverse-logos/snort-logo.png" title="snort logo" alt="snort logo"  />
+              Snort
+              </a>
+              <a href="https://github.com/v0l/snort" title="snort on github">
+                <img class="badge" src="assets/icons/icon-github.svg" /></a>
+            </li>
+          </ul>
+          <!-- signing extensions --->
+          <h4 id="extensions" class=""><img class="badge" src="assets/icons/icon-extension.svg" /> Signing extensions</h4>
+          <p class="">Keep your keys more secure</p>
+          <ul class="logo-list">
+            <!--- alby --->
+            <li>
+              <a href="https://getalby.com" target="_blank">
+                <img src="assets/images/nostrverse/nostrverse-logos/alby-logo.png" />
+                Alby
+              </a>
+              <a href="https://github.com/getAlby/lightning-browser-extension" title="alby on github">
+                <img class="badge" src="assets/icons/icon-github.svg" />
+              </a>
+            </li>
+            <!--- nos2x --->
+            <li>
+              <a
+                href="https://chrome.google.com/webstore/detail/nos2x/kpgefcfmnafjgpblomihpgmejjdanjjp" target="_blank">
+                <img src="assets/images/nostrverse/nostrverse-logos/nos2x-logo.png" />
+                nos2x
+              </a>
+              <a href="https://github.com/fiatjaf/nos2x" title="nos2x on github">
+                <img class="badge" src="assets/icons/icon-github.svg" />
+              </a>
+            </li>
+            <!--- nostore --->
+            <li>
+              <a
+                href="https://testflight.apple.com/join/ouPWAQAV" target="_blank">
+                <img src="assets/images/nostrverse/nostrverse-logos/nostore-logo.png" />
+                Nostore
+              </a>
+              <a href="https://github.com/ursuscamp/nostore" title="nostore on github">
+                <img class="badge" src="assets/icons/icon-github.svg" />
+              </a>
+            </li>
+            <!--- nsecbunker --->
+            <li>
+              <a
+                href="https://nsecbunker.com/" target="_blank">
+                <img src="assets/images/nostrverse/nostrverse-logos/nsecbunker-logo.png" />
+                nsecBunker
+              </a>
+              <a href="https://github.com/kind-0/nsecbunkerd" title="nostore on github">
+                <img class="badge" src="assets/icons/icon-github.svg" />
+              </a>
+            </li>
+          </ul>
+          <!--- command line tools --->
+          <h4 class=""><img class="badge" src="assets/icons/icon-cli.svg" /> Desktop & command line tools for the terminal</h4>
+          <ul class="logo-list">
+            <!--- algia --->
+            <li>
+                <a 
+                  href="https://github.com/mattn/algia" target="_blank">
+                  Algia <br><img class="badge" src="assets/icons/icon-github.svg" /></a>
+            </li>
+            <!--- gossip --->
+            <li>
+              <a
+                href="https://github.com/mikedilger/gossip" target="_blank">
+                Gossip <br><img class="badge" src="assets/icons/icon-github.svg" />
+              </a>
+            </li>
+            <!--- nak --->
+            <li>
+              <a
+                href="https://github.com/fiatjaf/nak" target="_blank">
+                Nak <br><img class="badge" src="assets/icons/icon-github.svg" />
+              </a>
+            </li>
+          </ul>
+        </section>
+      </section>
     <section id="faqs" class="info">
       <section>
-        <h2>FAQs</h2>
+        <h2>#asknostr</h2>
+        <p class="question" id="devloping">
+          <a href="#ostrich"> Can anyone develop on Nostr? </a>
+        </p>
+        <p class="answer">YES! Nostr's super-power is its permissionless development enviroment. As an interopable and modular protocol, Nostr is a dream to develop for.</p>
         <p class="question" id="ostrich">
           <a href="#ostrich"> What's with the Ostrich? </a>
         </p>
         <p class="answer">The Ostrich is the beloved mascot of Nostr users.</p>
-        <p class="question" id="dm-security">
-          <a href="#dm-security"> Why are DM's not considered secure? </a>
-        </p>
-        <p class="answer">
-          DM's on Nostr using the
-          <a
-            href="https://github.com/nostr-protocol/nips/blob/master/04.md"
-            target="_blank"
-            >NIP-04</a
-          >
-          are encrypted, but only it's contents. This means that people can
-          discover which DM's are being sent to who. This is different from
-          secure chat applications like signal where all communications are
-          encrypted.
-        </p>
         <p class="question" id="what-are-nips">
           <a href="#what-are-nips"> What are NIPs? </a>
         </p>
@@ -242,7 +354,7 @@
     </section>
     <section class="info">
       <section>
-        <p class="font-small bold text-center">Fueled with ambition 🤙</p>
+        <p class="font-small bold text-center">Fueled with ambition and other stuff 🤙</p>
       </section>
     </section>
     <dialog id="create-keys-dialog">
@@ -251,4 +363,17 @@
       </div>
     </dialog>
   </body>
+  <script>
+    function replaceContent() {
+    var odds = Math.floor(Math.random() * 5) + 1;
+    if (odds === 1) {
+      document.getElementById('header-img').innerHTML = '<img src="./assets/images/home/glowalien-2.png" class="glowalien" alt="glowalien" />';
+    }
+    else{
+      document.getElementById('header-img').innerHTML = '<img src="./assets/images/home/glowcrane.png" class="glowalien" alt="glowalien" />';
+    }
+  }
+  
+replaceContent();
+  </script>
 </html>
