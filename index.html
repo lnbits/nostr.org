@@ -40,7 +40,7 @@
       <img src="assets/images/notes.svg" class="svg-neon spin-tweak notes" />
       <img src="assets/images/notes.svg" class="svg-neon spin-tweak otherNotes"/>
       <div id="intro" class="pos center">
-        <img src="./assets/images/home/glowalien-2.png" class="glowalien" alt="glowalien" />
+        <div id="header-img"></div>
         <div class="display-heading">Come join us<br class="mobile-hide" /> on Nostr:
         </div>
         <label class="display-heading-subtitle"
@@ -363,4 +363,17 @@
       </div>
     </dialog>
   </body>
+  <script>
+    function replaceContent() {
+    var odds = Math.floor(Math.random() * 5) + 1;
+    if (odds === 1) {
+      document.getElementById('header-img').innerHTML = '<img src="./assets/images/home/glowalien-2.png" class="glowalien" alt="glowalien" />';
+    }
+    else{
+      document.getElementById('header-img').innerHTML = '<img src="./assets/images/home/glowcrane.png" class="glowalien" alt="glowalien" />';
+    }
+  }
+  
+replaceContent();
+  </script>
 </html>
