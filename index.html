@@ -98,7 +98,7 @@
       >
         <div class="text-sm font-mono text-gray-200 p-4 break-all leading-snug">
           <span class="font-semibold text-green-700">~</span><span class="font-semibold">></span>
-          <span class="text-teal-500">nak</span>
+          <a class="text-teal-500" href="https://github.com/fiatjaf/nak" target="_blank">nak</a>
           <span class="text-purple-300"
             >event --sec 7465 -c
             <span class="text-yellow-500">'this is going to work'</span> nostr.wine relay.damus.io
@@ -120,31 +120,85 @@
 
       <!-- Screenshot -->
       <img
-        class="hidden sm:block max-w-2xl md:max-w-3xl absolute left-0 top-5 rounded-xl shadow-lg transition duration-500 opacity-90 hover:opacity-100 hover:z-20"
+        class="hidden sm:block max-w-2xl md:max-w-3xl absolute left-0 top-5 rounded-xl shadow-lg transition duration-500 opacity-90 hover:opacity-100 hover:z-20 cursor-pointer"
+        @click="window.open('https://coracle.social')"
         src="/screenshots/coracle.png"
         title="the Coracle client"
       />
 
       <!-- iframe -->
-      <iframe
-        class="hidden sm:block w-xl md:w-2xl h-130 absolute left-10 top-25 rounded-xl shadow-lg transition duration-500 opacity-90 hover:opacity-100 hover:z-20"
-        src=""
-        :src="Math.random() < 0.3 ? 'https://chachi.chat/relay/wss%3A%2F%2Fyabu.me/feed' : 'https://chachi.chat/relay/wss%3A%2F%2Fnostr.wine/feed'"
-        title="the chachi client"
+      <div
+        class="absolute left-10 top-25 transition duration-500 opacity-90 hover:opacity-100 hover:z-20"
+        x-data="{url: Math.random() < 0.3 ? 'https://chachi.chat/relay/wss%3A%2F%2Fyabu.me/feed' : 'https://chachi.chat/relay/wss%3A%2F%2Fnostr.wine/feed'}"
       >
-      </iframe>
+        <iframe
+          class="hidden sm:block w-xl md:w-2xl h-130 rounded-xl shadow-lg"
+          src=""
+          :src="url"
+          title="the chachi client"
+        >
+        </iframe>
+        <a
+          :href="url"
+          target="_blank"
+          class="absolute top-0 left-0 right-0 h-10 z-10 cursor-pointer"
+          title="Open Chachi client"
+          aria-label="Open Chachi client"
+        ></a>
+        <a
+          :href="url"
+          target="_blank"
+          class="absolute top-0 left-0 bottom-0 w-10 z-10 cursor-pointer"
+          title="Open Chachi client"
+          aria-label="Open Chachi client"
+        ></a>
+        <a
+          :href="url"
+          target="_blank"
+          class="absolute top-0 right-0 bottom-0 w-10 z-10 cursor-pointer"
+          title="Open Chachi client"
+          aria-label="Open Chachi client"
+        ></a>
+      </div>
 
       <!-- iframe -->
-      <iframe
-        class="hidden sm:block w-xl md:w-3xl h-130 absolute left-20 top-45 rounded-xl shadow-lg transition duration-500 opacity-90 hover:opacity-100 hover:z-20"
-        :src="Math.random() < 0.5 ? Math.random() < 0.5 ? 'https://jumble.social/?r=relays.land/spatianostra' : 'https://jumble.social/?r=nostr.land' : 'https://jumble.social/?r=pyramid.fiatjaf.com'"
-        title="the Jumble client"
+      <div
+        class="absolute left-20 top-45 transition duration-500 opacity-90 hover:opacity-100 hover:z-20"
+        x-data="{url: Math.random() < 0.5 ? Math.random() < 0.5 ? 'https://jumble.social/?r=relays.land/spatianostra' : 'https://jumble.social/?r=nostr.land' : 'https://jumble.social/?r=pyramid.fiatjaf.com'}"
       >
-      </iframe>
+        <iframe
+          class="hidden sm:block w-xl md:w-3xl h-130 rounded-xl shadow-lg transition duration-500 opacity-90 hover:opacity-100 hover:z-20"
+          :src="url"
+          title="the Jumble client"
+        >
+        </iframe>
+        <a
+          :href="url"
+          target="_blank"
+          class="absolute top-0 left-0 right-0 h-10 z-10 cursor-pointer"
+          title="Open Jumble client"
+          aria-label="Open Jumble client"
+        ></a>
+        <a
+          :href="url"
+          target="_blank"
+          class="absolute top-0 left-0 bottom-0 w-10 z-10 cursor-pointer"
+          title="Open Jumble client"
+          aria-label="Open Jumble client"
+        ></a>
+        <a
+          :href="url"
+          target="_blank"
+          class="absolute top-0 right-0 bottom-0 w-10 z-10 cursor-pointer"
+          title="Open Jumble client"
+          aria-label="Open Jumble client"
+        ></a>
+      </div>
 
       <!-- Screenshot -->
       <img
-        class="h-120 absolute right-0 top-0 rounded-xl transition duration-500 opacity-90 hover:opacity-100 hover:z-20"
+        class="h-120 absolute right-0 top-0 rounded-xl transition duration-500 opacity-90 hover:opacity-100 hover:z-20 cursor-pointer"
+        @click="window.open('https://www.amethyst.social/')"
         src="/screenshots/amethyst.png"
         title="the Amethyst client"
       />
@@ -152,6 +206,7 @@
       <!-- Screenshot -->
       <img
         class="h-120 absolute right-20 top-10 rounded-xl transition duration-500 opacity-90 hover:opacity-100 hover:z-20"
+        @click="window.open('https://yakihonne.com/yakihonne-mobile-app')"
         src="/screenshots/yakihonne2.png"
         title="the Yakihonne client"
       />
@@ -159,6 +214,7 @@
       <!-- Screenshot -->
       <img
         class="h-120 absolute right-40 top-20 rounded-xl transition duration-500 opacity-90 hover:opacity-100 hover:z-20"
+        @click="window.open('https://nostur.com/')"
         src="/screenshots/nostur.png"
         title="the Nostur client"
       />
