@@ -129,7 +129,7 @@
       <!-- iframe -->
       <div
         class="absolute left-10 top-25 transition duration-500 opacity-90 hover:opacity-100 hover:z-20"
-        x-data="{url: Math.random() < 0.3 ? 'https://chachi.chat/relay/wss%3A%2F%2Fyabu.me/feed' : 'https://chachi.chat/relay/wss%3A%2F%2Fnostr.wine/feed'}"
+        x-data="{url: 'https://chachi.chat/relay/wss%3A%2F%2F' + (Math.random() < 0.3 ? 'yabu.me' : 'nostr.wine') + '/feed'}"
       >
         <iframe
           class="hidden sm:block w-xl md:w-2xl h-130 rounded-xl shadow-lg"
@@ -164,7 +164,7 @@
       <!-- iframe -->
       <div
         class="absolute left-20 top-45 transition duration-500 opacity-90 hover:opacity-100 hover:z-20"
-        x-data="{url: Math.random() < 0.5 ? Math.random() < 0.5 ? 'https://jumble.social/?r=relays.land/spatianostra' : 'https://jumble.social/?r=nostr.land' : 'https://jumble.social/?r=pyramid.fiatjaf.com'}"
+        x-data="{url: 'https://jumble.social/?r=' + (Math.random() < 0.5 ? Math.random() < 0.5 ? 'relays.land/spatianostra' : 'nostr.land' : 'pyramid.fiatjaf.com')}"
       >
         <iframe
           class="hidden sm:block w-xl md:w-3xl h-[630px] rounded-xl shadow-lg transition duration-500 opacity-90 hover:opacity-100 hover:z-20"
