@@ -359,33 +359,28 @@ function Account(props: { secretKey: Uint8Array; showNextSteps: null | (() => vo
 
           {/* Initial Note Section (shown after profile published) */}
           <Show when={profilePublishSuccess() && !notePublishSuccess()}>
-  <div class="bg-gray-800 p-6 rounded-xl shadow-md space-y-3">
-    
-      <h4
-        class="text-lg font-extrabold text-[#44c8f5] mb-2 inline-block border-b-4 border-[#44c8f5] pb-1"
-      >
-        nostr.com paid services
-      </h4>
-      <p class="text-sm text-white mb-3">
-      You totally don't need to use paid services from nostr.com to access nostr,
-      but we do happen to sell nostr services, like very pretty nostr names (yourname@nostr.com). 
-      Buying one helps support the development of this site, and will impress all your friends.
-      </p>
+            <div class="bg-gray-800 p-6 rounded-xl shadow-md space-y-3">
+              <h4 class="text-lg font-extrabold text-[#44c8f5] mb-2 inline-block border-b-4 border-[#44c8f5] pb-1">
+                nostr.com paid services
+              </h4>
+              <p class="text-sm text-white mb-3">
+                You totally don't need to use paid services from nostr.com to access nostr, but we
+                do happen to sell nostr services, like very pretty nostr names (yourname@nostr.com).
+                Buying one helps support the development of this site, and will impress all your
+                friends.
+              </p>
 
-      <a
-        href="https://my.nostr.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="cursor-pointer w-full mt-2 inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white dark:text-dotcom-dark bg-secondary dark:bg-dotcom-light rounded-xl hover:opacity-90 transition shadow-sm"
-      >
-        <span class="material-symbols-outlined mr-2 text-lg">shopping_cart</span>
-        visit my.nostr.com
-      </a>
-  
-  </div>
-</Show>
-
-
+              <a
+                href="https://my.nostr.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="cursor-pointer w-full mt-2 inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white dark:text-dotcom-dark bg-secondary dark:bg-dotcom-light rounded-xl hover:opacity-90 transition shadow-sm"
+              >
+                <span class="material-symbols-outlined mr-2 text-lg">shopping_cart</span>
+                visit my.nostr.com
+              </a>
+            </div>
+          </Show>
 
           {/* Next Steps Button (shown before download and not showing next steps) */}
           <Show when={props.showNextSteps !== null}>
@@ -472,7 +467,15 @@ Generated on: ${new Date().toLocaleString()} on https://nostr.com/
 
       await Promise.any(
         pool.publish(
-          [...writeRelays, "user.kindpag.es", "relay.nos.social", "purplepag.es"],
+          [
+            ...writeRelays,
+            "user.kindpag.es",
+            "relay.nos.social",
+            "purplepag.es",
+            "relay.damus.io",
+            "nos.lol",
+            "relay.primal.net"
+          ],
           finalizeEvent(
             {
               kind: 0,
@@ -487,7 +490,15 @@ Generated on: ${new Date().toLocaleString()} on https://nostr.com/
 
       await Promise.any(
         pool.publish(
-          [...writeRelays, "user.kindpag.es", "indexer.coracle.social", "purplepag.es"],
+          [
+            ...writeRelays,
+            "user.kindpag.es",
+            "indexer.coracle.social",
+            "purplepag.es",
+            "relay.damus.io",
+            "nos.lol",
+            "relay.primal.net"
+          ],
           finalizeEvent(
             {
               kind: 10002,
@@ -510,7 +521,14 @@ Generated on: ${new Date().toLocaleString()} on https://nostr.com/
 
       await Promise.any(
         pool.publish(
-          [...writeRelays, "user.kindpag.es", "purplepag.es"],
+          [
+            ...writeRelays,
+            "user.kindpag.es",
+            "purplepag.es",
+            "relay.damus.io",
+            "nos.lol",
+            "relay.primal.net"
+          ],
           finalizeEvent(
             {
               kind: 3,
@@ -555,7 +573,7 @@ Generated on: ${new Date().toLocaleString()} on https://nostr.com/
     setNotePublishError("")
 
     try {
-      const writeRelays = ["wss://nostr.mom", "wss://relay.damus.io"]
+      const writeRelays = ["nostr.mom", "relay.damus.io", "relay.primal.net"]
       const note = finalizeEvent(
         {
           kind: 1,
