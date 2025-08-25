@@ -1,7 +1,7 @@
 export PATH := "./node_modules/.bin:" + env_var('PATH')
 
 dev:
-  vite --host 0.0.0.0
+  vite --host 0.0.0.0 --port 5293
 
 build:
   rm -rf dist/

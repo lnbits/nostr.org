@@ -77,7 +77,7 @@
           <span class="ml-1 text-lg">›</span>
         </button>
         <a
-          href="https://www.youtube.com/watch?v=Tbt3jL1Ms0w"
+          href="https://www.youtube.com/watch?v=Tbt3jL1Ms0w&t=23s"
           target="_blank"
           class="cursor-pointer inline-flex items-center mx-auto sm:mx-0 max-w-lg border border-secondary dark:border-dotcom-light text-primary dark:text-white font-medium px-8 md:px-6 py-2.5 rounded-full text-sm transition hover:bg-grayish dark:hover:bg-gray-700"
         >
@@ -129,7 +129,7 @@
       <!-- iframe -->
       <div
         class="absolute left-10 top-25 transition duration-500 opacity-90 hover:opacity-100 hover:z-20"
-        x-data="{url: 'https://chachi.chat/relay/wss%3A%2F%2F' + (Math.random() < 0.3 ? 'yabu.me' : 'nostr.wine') + '/feed'}"
+        x-data="{url: 'https://chachi.chat/relay/wss%3A%2F%2F' + ['yabu.me', 'nostr.wine', 'theforest.nostr1.com'][Math.floor(3 * Math.random())] + '/feed'}"
       >
         <iframe
           class="hidden sm:block w-xl md:w-2xl h-130 rounded-xl shadow-lg"
@@ -164,7 +164,7 @@
       <!-- iframe -->
       <div
         class="absolute left-20 top-45 transition duration-500 opacity-90 hover:opacity-100 hover:z-20"
-        x-data="{url: 'https://jumble.social/?r=' + (Math.random() < 0.5 ? Math.random() < 0.5 ? 'relays.land/spatianostra' : 'nostr.land' : 'pyramid.fiatjaf.com')}"
+        x-data="{url: 'https://jumble.social/?r=' + ['relays.land/spatianostra', 'pyramid.fiatjaf.com', 'nostr.land'][Math.floor(3 * Math.random())]}"
       >
         <iframe
           class="hidden sm:block w-xl md:w-3xl h-[630px] rounded-xl shadow-lg transition duration-500 opacity-90 hover:opacity-100 hover:z-20"
