@@ -46,11 +46,11 @@ function NextSteps(props: { npub: string }) {
               YakiHonne
             </a>
             <a
-              href="https://github.com/mikedilger/gossip"
+              href="https://nosotros.app/"
               target="_blank"
               class="text-xs bg-secondary/10 dark:bg-dotcom-light/10 text-secondary dark:text-dotcom-light px-2 py-1 rounded hover:bg-secondary/20 dark:hover:bg-dotcom-light/20 transition"
             >
-              Gossip
+              Nosotros
             </a>
             <a
               href="https://nostur.com/"
