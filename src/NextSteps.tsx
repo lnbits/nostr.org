@@ -32,11 +32,11 @@ function NextSteps(props: { npub: string }) {
               Jumble
             </a>
             <a
-              href="https://chachi.chat/"
+              href="https://grimoire.rocks/"
               target="_blank"
               class="text-xs bg-secondary/10 dark:bg-dotcom-light/10 text-secondary dark:text-dotcom-light px-2 py-1 rounded hover:bg-secondary/20 dark:hover:bg-dotcom-light/20 transition"
             >
-              Chachi
+              Grimoire
             </a>
             <a
               href="https://yakihonne.com/yakihonne-mobile-app"

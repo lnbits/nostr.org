@@ -53,7 +53,7 @@
       <h1
         class="mt-4 text-4xl md:text-6xl lg:text-7xl font-bold max-w-5xl mx-auto mb-6 scroll-reveal-slow"
       >
-        An open protocol with a chance of working
+        An open social protocol with a chance of working
       </h1>
       <p
         class="text-base md:text-lg max-w-4xl mx-auto text-primary-lighter dark:text-gray-300 mb-8 scroll-reveal"
@@ -129,13 +129,13 @@
       <!-- iframe -->
       <div
         class="absolute left-10 top-25 transition duration-500 opacity-90 hover:opacity-100 hover:z-20"
-        x-data="{url: 'https://chachi.chat/relay/wss%3A%2F%2F' + ['yabu.me', 'nostr.wine', 'theforest.nostr1.com'][Math.floor(3 * Math.random())] + '/feed'}"
+        x-data="{url: 'https://grimoire.rocks/run?cmd=req%20-k%201%20-k%2011%20' + ['yabu.me', 'nostr.wine', 'theforest.nostr1.com'][Math.floor(3 * Math.random())]}"
       >
         <iframe
           class="hidden sm:block w-xl md:w-2xl h-130 rounded-xl shadow-lg"
           src=""
           :src="url"
-          title="the chachi client"
+          title="the grimoire client"
         >
         </iframe>
         <a
