@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en" x-data="darkMode()" :class="isDark ? 'dark' : ''">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nostr Chat - Private messaging on Nostr</title>
+    <meta
+      name="description"
+      content="Nostr Chat is a private messaging app for one-to-one and group conversations on the Nostr protocol."
+    />
+
+    <link href="/main.css" rel="stylesheet" />
+    <link href="/src/base.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </head>
+  <body
+    class="bg-background-light dark:bg-dotcom-dark text-primary overflow-x-hidden font-sans dark:text-white"
+  >
+    <header
+      class="border-white/45 bg-background-light/88 dark:bg-dotcom-dark/88 fixed left-0 right-0 top-0 z-30 w-screen border-b backdrop-blur dark:border-white/10"
+    >
+      <div
+        class="mx-auto flex w-[calc(100vw-2rem)] max-w-7xl items-center justify-between py-4 sm:w-[calc(100vw-3rem)]"
+      >
+        <a href="/" class="shrink-0 text-xl font-bold tracking-tight">
+          <span class="text-primary dark:text-white">nostr</span>
+        </a>
+        <nav class="text-primary flex shrink-0 items-center gap-4 text-sm dark:text-white sm:gap-6">
+          <a
+            href="#platforms"
+            class="hover:text-secondary dark:hover:text-dotcom-light hidden sm:block"
+            >Platforms</a
+          >
+          <a
+            href="#privacy"
+            class="hover:text-secondary dark:hover:text-dotcom-light hidden md:block"
+            >Privacy</a
+          >
+          <a
+            href="https://github.com/lnbits/nostr-chat/tree/"
+            target="_blank"
+            class="hover:text-secondary dark:hover:text-dotcom-light"
+            >GitHub</a
+          >
+          <button
+            @click="toggle()"
+            aria-label="Toggle dark mode"
+            class="material-symbols-outlined hover:text-secondary dark:hover:text-dotcom-light cursor-pointer text-2xl transition"
+            x-text="isDark ? 'light_mode' : 'dark_mode'"
+          ></button>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section
+        class="relative flex min-h-[72svh] w-screen items-end overflow-hidden pt-24 sm:min-h-[76vh]"
+      >
+        <picture class="absolute inset-0 block">
+          <source media="(max-width: 767px)" srcset="/nostr-chat/mobile-groups.png" />
+          <img
+            src="/nostr-chat/desktop-chat.png"
+            alt="Nostr Chat desktop conversation interface"
+            class="h-full w-full object-cover object-left md:object-center"
+          />
+        </picture>
+        <div class="bg-background-light/88 dark:bg-dotcom-dark/88 absolute inset-0"></div>
+
+        <div
+          class="relative mx-auto w-[calc(100vw-2rem)] max-w-7xl pb-10 sm:w-[calc(100vw-3rem)] sm:pb-14 lg:pb-16"
+        >
+          <div class="w-full max-w-3xl">
+            <div
+              class="border-secondary/40 text-secondary dark:border-dotcom-light/35 dark:bg-dotcom-dark/70 dark:text-dotcom-light mb-5 inline-flex items-center gap-2 border bg-white/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] backdrop-blur"
+            >
+              <span class="material-symbols-outlined text-base">lock</span>
+              Private messaging on Nostr
+            </div>
+            <h1 class="mb-5 text-4xl font-bold leading-none sm:text-6xl lg:text-7xl">Nostr Chat</h1>
+            <p
+              class="text-primary-lighter max-w-[calc(100vw-2rem)] break-words text-base leading-7 dark:text-gray-200 sm:max-w-2xl sm:text-lg"
+            >
+              <span class="block">Encrypted DMs, groups, and contact requests.</span>
+              <span class="block">Relay control for private messaging.</span>
+            </p>
+            <div class="mt-8 flex flex-col justify-start gap-4 sm:flex-row">
+              <a
+                href="#platforms"
+                class="bg-secondary dark:bg-dotcom-light dark:text-dotcom-dark mx-auto inline-flex max-w-lg cursor-pointer items-center justify-center gap-2 rounded-full px-8 py-2.5 text-sm font-medium text-white transition hover:opacity-90 sm:mx-0 md:px-6"
+              >
+                <span class="material-symbols-outlined text-lg">download</span>
+                Get Nostr Chat
+              </a>
+              <a
+                href="https://github.com/lnbits/nostr-chat/tree/"
+                target="_blank"
+                class="border-secondary text-primary hover:bg-grayish dark:border-dotcom-light mx-auto inline-flex max-w-lg cursor-pointer items-center justify-center gap-2 rounded-full border px-8 py-2.5 text-sm font-medium transition dark:text-white dark:hover:bg-gray-700 sm:mx-0 md:px-6"
+              >
+                <span class="material-symbols-outlined text-lg">code</span>
+                View source
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-background-light dark:bg-dotcom-dark -mt-1 px-4 pb-16 pt-8 sm:px-6">
+        <div
+          class="mx-auto grid w-[calc(100vw-2rem)] max-w-7xl min-w-0 gap-6 sm:w-[calc(100vw-3rem)] md:grid-cols-[1.15fr_0.85fr]"
+        >
+          <div
+            class="border-secondary dark:border-dotcom-light aspect-[3/2] min-w-0 overflow-hidden rounded-xl border-2 shadow-lg"
+          >
+            <img
+              src="/nostr-chat/desktop-chat.png"
+              alt="Nostr Chat desktop split-view layout"
+              class="block h-full w-full max-w-full object-cover"
+            />
+          </div>
+          <div class="grid min-w-0 grid-cols-2 gap-4">
+            <div
+              class="border-secondary dark:border-dotcom-light aspect-[9/16] min-w-0 overflow-hidden rounded-xl border-2 shadow-lg"
+            >
+              <img
+                src="/nostr-chat/mobile-chats.png"
+                alt="Nostr Chat mobile chat list"
+                class="block h-full w-full max-w-full object-cover object-top"
+              />
+            </div>
+            <div
+              class="border-secondary dark:border-dotcom-light aspect-[9/16] min-w-0 overflow-hidden rounded-xl border-2 shadow-lg"
+            >
+              <img
+                src="/nostr-chat/mobile-groups.png"
+                alt="Nostr Chat mobile group conversation"
+                class="block h-full w-full max-w-full object-cover object-top"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="platforms" class="px-4 py-16 sm:px-6">
+        <div class="mx-auto max-w-7xl">
+          <div class="mb-10 max-w-2xl">
+            <span
+              class="bg-grayish text-primary-lighter mb-3 inline-flex items-center rounded-full px-3 py-1 text-xs font-medium dark:bg-gray-700 dark:text-gray-300"
+              >Run it your way</span
+            >
+            <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+              One chat app, every desk and pocket
+            </h2>
+            <p class="text-primary-lighter mt-4 text-sm leading-6 dark:text-gray-300">
+              Nostr Chat can be used from a browser, as a standalone desktop app for macOS,
+              Windows, or Linux, and shipped to Android users as an APK.
+            </p>
+          </div>
+
+          <div class="grid gap-4 md:grid-cols-3">
+            <article
+              class="border-secondary dark:border-dotcom-light rounded-xl border-2 p-6 shadow-lg"
+            >
+              <span class="material-symbols-outlined mb-5 text-3xl text-[#118dcb]">language</span>
+              <h3 class="mb-2 font-semibold">Browser</h3>
+              <p class="text-primary-lighter text-sm leading-6 dark:text-gray-300">
+                Open it on desktop or mobile browsers with responsive layouts for chat lists and
+                conversations.
+              </p>
+              <a
+                href="https://chat.nostr.com"
+                target="_blank"
+                class="border-secondary text-primary hover:bg-grayish dark:border-dotcom-light mt-5 inline-flex cursor-pointer items-center gap-2 rounded-full border px-5 py-2 text-sm font-medium transition dark:text-white dark:hover:bg-gray-700"
+              >
+                <span class="material-symbols-outlined text-lg">open_in_new</span>
+                Open web app
+              </a>
+            </article>
+            <article
+              class="border-secondary dark:border-dotcom-light flex flex-col rounded-xl border-2 p-6 shadow-lg"
+            >
+              <span class="material-symbols-outlined mb-5 text-3xl text-[#d7257d]"
+                >desktop_windows</span
+              >
+              <h3 class="mb-2 font-semibold">Desktop</h3>
+              <p class="text-primary-lighter text-sm leading-6 dark:text-gray-300">
+                Electron app for macOS, Windows, and Linux when you want a standalone
+                app.
+              </p>
+              <div class="mt-auto flex flex-wrap gap-2 pt-5">
+                <a
+                  href="https://github.com/lnbits/nostr-chat/releases/latest/download/nostr-chat-macos.dmg"
+                  target="_blank"
+                  aria-label="Download macOS build"
+                  title="macOS"
+                  class="border-secondary text-primary hover:bg-grayish dark:border-dotcom-light inline-flex cursor-pointer items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition dark:text-white dark:hover:bg-gray-700"
+                >
+                  <span class="material-symbols-outlined text-lg">laptop_mac</span>
+                  macOS
+                </a>
+                <a
+                  href="https://github.com/lnbits/nostr-chat/releases/latest/download/nostr-chat-windows.exe"
+                  target="_blank"
+                  aria-label="Download Windows build"
+                  title="Windows"
+                  class="border-secondary text-primary hover:bg-grayish dark:border-dotcom-light inline-flex cursor-pointer items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition dark:text-white dark:hover:bg-gray-700"
+                >
+                  <span class="material-symbols-outlined text-lg">select_window</span>
+                  Windows
+                </a>
+                <a
+                  href="https://github.com/lnbits/nostr-chat/releases/latest/download/nostr-chat-linux.AppImage"
+                  target="_blank"
+                  aria-label="Download Linux build"
+                  title="Linux"
+                  class="border-secondary text-primary hover:bg-grayish dark:border-dotcom-light inline-flex cursor-pointer items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition dark:text-white dark:hover:bg-gray-700"
+                >
+                  <span class="material-symbols-outlined text-lg">terminal</span>
+                  Linux
+                </a>
+              </div>
+            </article>
+            <article
+              class="border-secondary dark:border-dotcom-light flex flex-col rounded-xl border-2 p-6 shadow-lg"
+            >
+              <span class="material-symbols-outlined mb-5 text-3xl text-[#089e75]">android</span>
+              <h3 class="mb-2 font-semibold">Android APK</h3>
+              <p class="text-primary-lighter text-sm leading-6 dark:text-gray-300">
+                Android APK ready to install.
+              </p>
+              <a
+                href="https://github.com/lnbits/nostr-chat/releases/latest/download/nostr-chat-android.apk"
+                target="_blank"
+                class="border-secondary text-primary hover:bg-grayish dark:border-dotcom-light mt-auto inline-flex cursor-pointer items-center gap-2 self-start rounded-full border px-4 py-2 text-sm font-medium transition dark:text-white dark:hover:bg-gray-700"
+              >
+                <span class="material-symbols-outlined text-lg">download</span>
+                Download
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="privacy" class="bg-white px-4 py-16 dark:bg-[#111c2a] sm:px-6">
+        <div class="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+          <div>
+            <span
+              class="bg-grayish text-primary-lighter mb-3 inline-flex items-center rounded-full px-3 py-1 text-xs font-medium dark:bg-gray-700 dark:text-gray-300"
+              >Private by protocol</span
+            >
+            <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+              Built around Nostr specs instead of a company account
+            </h2>
+            <p class="text-primary-lighter mt-4 text-sm leading-6 dark:text-gray-300">
+              The app uses Nostr login, encrypted private-message flows, relay
+              lists, private app storage, and profile events so chats stay portable across the
+              protocol.
+            </p>
+          </div>
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div
+              class="border-secondary dark:border-dotcom-light rounded-xl border-2 p-5 shadow"
+            >
+              <h3 class="mb-2 flex items-center gap-2 font-semibold">
+                <span class="material-symbols-outlined text-[#089e75]">key</span>
+                Account control
+              </h3>
+              <p class="text-primary-lighter text-sm leading-6 dark:text-gray-300">
+                Create a fresh Nostr account, use a NIP-07 signer, or log in with your own key.
+              </p>
+            </div>
+            <div
+              class="border-secondary dark:border-dotcom-light rounded-xl border-2 p-5 shadow"
+            >
+              <h3 class="mb-2 flex items-center gap-2 font-semibold">
+                <span class="material-symbols-outlined text-[#d7257d]">mark_chat_unread</span>
+                Direct messages
+              </h3>
+              <p class="text-primary-lighter text-sm leading-6 dark:text-gray-300">
+                Search threads, react, delete messages, track unread chats, and inspect relay
+                delivery.
+              </p>
+            </div>
+            <div
+              class="border-secondary dark:border-dotcom-light rounded-xl border-2 p-5 shadow"
+            >
+              <h3 class="mb-2 flex items-center gap-2 font-semibold">
+                <span class="material-symbols-outlined text-[#118dcb]">groups</span>
+                Group conversations
+              </h3>
+              <p class="text-primary-lighter text-sm leading-6 dark:text-gray-300">
+                Create groups, handle invitations, and keep membership data private to the app.
+              </p>
+            </div>
+            <div
+              class="border-secondary dark:border-dotcom-light rounded-xl border-2 p-5 shadow"
+            >
+              <h3 class="mb-2 flex items-center gap-2 font-semibold">
+                <span class="material-symbols-outlined text-secondary dark:text-dotcom-light"
+                  >settings_input_antenna</span
+                >
+                Relay choice
+              </h3>
+              <p class="text-primary-lighter text-sm leading-6 dark:text-gray-300">
+                Manage app relays, published relay lists, discovered contact relays, and connection
+                state.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="px-4 py-16 sm:px-6">
+        <div class="mx-auto max-w-7xl">
+          <div class="mb-10 max-w-2xl">
+            <span
+              class="bg-grayish text-primary-lighter mb-3 inline-flex items-center rounded-full px-3 py-1 text-xs font-medium dark:bg-gray-700 dark:text-gray-300"
+              >Messaging workflow</span
+            >
+            <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+              The controls chat users expect
+            </h2>
+          </div>
+          <div class="grid gap-4 md:grid-cols-3">
+            <article
+              class="border-secondary dark:border-dotcom-light rounded-xl border-2 p-6 shadow-lg"
+            >
+              <h3 class="mb-2 font-semibold">Review first-contact requests</h3>
+              <p class="text-primary-lighter text-sm leading-6 dark:text-gray-300">
+                Accept, block, delete, or inspect new requests before they enter your main chats.
+              </p>
+            </article>
+            <article
+              class="border-secondary dark:border-dotcom-light rounded-xl border-2 p-6 shadow-lg"
+            >
+              <h3 class="mb-2 font-semibold">Manage people and profile</h3>
+              <p class="text-primary-lighter text-sm leading-6 dark:text-gray-300">
+                Keep contacts, profile publishing, identifier lookup, and preferences in one place.
+              </p>
+            </article>
+            <article
+              class="border-secondary dark:border-dotcom-light rounded-xl border-2 p-6 shadow-lg"
+            >
+              <h3 class="mb-2 font-semibold">See what the network is doing</h3>
+              <p class="text-primary-lighter text-sm leading-6 dark:text-gray-300">
+                Check sync history, notification settings, relay diagnostics, and connection state.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="px-4 pb-20 sm:px-6">
+        <div
+          class="border-secondary dark:border-dotcom-light mx-auto flex max-w-7xl flex-col gap-6 rounded-xl border-2 p-6 shadow-lg md:flex-row md:items-center md:justify-between"
+        >
+          <div>
+            <h2 class="text-2xl font-bold">Build Nostr Chat from the source repo</h2>
+            <p class="text-primary-lighter mt-2 max-w-2xl text-sm leading-6 dark:text-gray-300">
+              The project includes web, Electron, and Android build scripts, plus developer notes
+              for Nostr specs, testing, and packaging.
+            </p>
+          </div>
+          <a
+            href="https://github.com/lnbits/nostr-chat/tree/"
+            target="_blank"
+            class="bg-dotcom-light text-dotcom-dark inline-flex cursor-pointer items-center justify-center gap-2 rounded-full px-8 py-2.5 text-sm font-medium transition hover:bg-dotcom-light/90 md:px-6"
+          >
+            <span class="material-symbols-outlined text-lg">open_in_new</span>
+            Open repository
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="text-primary-lighter px-4 pb-8 text-sm dark:text-gray-300 sm:px-6">
+      <div
+        class="border-secondary/30 dark:border-dotcom-light/30 mx-auto flex max-w-7xl flex-col gap-4 border-t pt-6 sm:flex-row sm:items-center sm:justify-between"
+      >
+        <a href="/" class="text-primary font-bold dark:text-white">nostr</a>
+        <p>
+          Made by
+          <a
+            href="https://lnbits.com/"
+            target="_blank"
+            class="text-lnbits-dark dark:text-lnbits-light font-semibold hover:underline"
+            >LNbits</a
+          >
+          for people who want private chat on open protocols.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", initScrollReveal)
+
+      function initScrollReveal() {
+        const observer = new IntersectionObserver(
+          entries => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) entry.target.classList.add("revealed")
+            })
+          },
+          {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+          }
+        )
+
+        document
+          .querySelectorAll(".scroll-reveal, .scroll-reveal-slow, .scroll-reveal-stagger")
+          .forEach(el => observer.observe(el))
+      }
+
+      function darkMode() {
+        return {
+          isDark: false,
+
+          init() {
+            const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches
+            const savedTheme = localStorage.getItem("theme")
+            this.isDark = savedTheme ? savedTheme === "dark" : systemPrefersDark
+          },
+
+          toggle() {
+            this.isDark = !this.isDark
+            localStorage.setItem("theme", this.isDark ? "dark" : "light")
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
