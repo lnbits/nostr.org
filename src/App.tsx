@@ -1,7 +1,7 @@
 import { createSignal, Match, onMount, Show, Switch } from "solid-js"
 import { generateSecretKey, getPublicKey } from "@nostr/tools/pure"
 import { npubEncode } from "@nostr/tools/nip19"
-import { bytesToHex, hexToBytes } from "@noble/hashes/utils"
+import { bytesToHex, hexToBytes } from "@noble/hashes/utils.js"
 import Account from "./Account"
 import NextSteps from "./NextSteps"
 

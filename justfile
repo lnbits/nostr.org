@@ -8,4 +8,6 @@ build:
   mkdir dist/
   NODE_ENV=production node build.js
   cp index.html dist/
+  cp CNAME dist/
   cp -r public/* dist/
+  touch dist/.nojekyll
